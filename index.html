@@ -12,12 +12,55 @@
     <meta name='description' content=''>
     <meta name='keywords' content=''>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='./assets/script/index.js' defer></script>
+    <script src='./assets/script/index.js' type='module'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <title></title>
   </head>
   <body>
-    <header><div class='container'></div></header>
-    <main><div class='container'></div></main>
+    <header>
+      <div class='container flex'>
+        <div class='title flex'>
+          <div class='title-logo'></div>
+          <div class='title-name'>
+            <h1>Tickets</h1>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>Movies</li>
+            <li>Theatres</li>
+            <li>About Us</li>
+            <li>My Account</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class='container'>
+        <div class='input flex'>
+          <div class='input-movie'>
+            <input type='text' class='input-field-movie'>
+            <div class='output-movies'></div>
+          </div>
+          <div class='input-city'>
+            <input type='text' class='input-field-city'>
+            <div class='output-cities'></div>
+          </div>
+          <div class='input-search'>
+            <input type='button' class='input-field-search' value='search'>
+          </div>
+        </div>
+        <div class='movies'>
+          <h2>Movies</h2>
+          <div class='grid'>
+            <!-- <div class='movie'>
+              <div class='movie-poster'></div>
+              <div class='movie-title'></div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
     <footer><div class='container'></div></footer>
   </body>
 </html>
