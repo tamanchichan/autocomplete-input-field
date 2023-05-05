@@ -1,7 +1,258 @@
 @import url('./reset.css');
 
+:root {
+  --black: #000;
+  --black-one: #262930;
+  --black-two: #191c24;
+  
+  --blue: #00f;
+  
+  --orange: #ff7b02;
+  
+  --white: #fff;
+}
+
+/* html */
+body {
+  background-color: var(--black-two);
+  color: var(--white);
+}
+
+input {
+  background-color: var(--black-one);
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 20px;
+  height: 40px;
+  line-height: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+ul li {
+  cursor: pointer;
+  transition: color 0.25s ease-in-out;
+}
+
+ul li:hover {
+  color: var(--orange);
+}
+
 /* class */
 .container {
   margin-inline: auto;
   width: min(100% - 30px, 1080px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.list {
+  color: var(--black);
+  font-size: 25px;
+  padding: 10px;
+}
+
+.list:hover {
+  cursor: pointer;
+  background-color: var(--orange);
+}
+
+.movie {cursor: pointer;}
+
+.movie-poster {
+  border-radius: 5px;
+  width: 250px;
+  height: 400px;
+  user-select: none;
+}
+
+.movie-poster:hover {
+  border-bottom: 5px solid var(--blue);
+}
+
+.movie-title {
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+
+.output-cities, .output-movies {
+  background-color: var(--white);
+  border-radius: 5px;
+  color: var(--black);
+  display: none;
+  font-size: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  position: absolute;
+}
+
+.output-cities {
+  width: 20%;
+}
+
+.output-movies {
+  width: 40%;
+}
+
+/* header */
+header {
+  background-color: var(--black-one);
+  /* font-size: 0px; */
+  /* height: 50px; */
+  /* line-height: 50px; */
+}
+
+header > * {
+  font-size: 0px;
+  height: 50px;
+  line-height: 50px;
+}
+
+header .flex {
+  justify-content: space-between;
+}
+
+
+header .title-logo {
+  background-image: url('../image/ticket.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  width: 50px;
+}
+
+header .title-name h1 {
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+header nav ul li {
+  display: inline;
+  font-size: 15px;
+}
+
+header nav ul li + li {
+  margin-left: 15px;
+}
+
+/* main */
+main .input {
+  justify-content: center;
+  margin: 50px 0px;
+  width: 100%;
+}
+
+main .input .input-movie {
+  width: 60%;
+}
+
+main .input .input-movie .input-field-movie {
+  background-image: url('../image/search.png');
+  background-position-x: 10px;
+  background-position-y: 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
+}
+
+main .input .input-city {
+  margin: 0px 25px 0px 50px;
+  width: 30%;
+}
+
+main .input .input-city .input-field-city {
+  background-image: url('../image/marker.png');
+  background-position-x: 10px;
+  background-position-y: 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
+}
+
+main .input .input-search {
+  width: 10%;
+}
+
+main .input .input-search .input-field-search {
+  background-color: var(--orange);
+  font-size: 15px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 2px var(--black);
+  letter-spacing: 2.5px;
+}
+
+main .movies h2 {
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+@media (max-width: 720px) {
+  /* class */
+  .grid {
+    display: block;
+  }
+  
+  .movie-poster {
+    display: flex;
+    margin: 0 auto;
+  }
+  
+  /* main */
+  main .input {
+    flex-wrap: wrap;
+  }
+  
+  main .input .input-movie {
+    width: calc(50% - 10px)
+  }
+  
+  main .input .input-city {
+    margin: 0px 0px 0px 20px;
+    width: calc(50% - 10px)
+  }
+  
+  main .input .input-search {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* header */
+  header {
+    height: 100px;
+    line-height: 100px;
+  }
+  
+  header .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* main */
+  main .input {
+    display: block;
+  }
+  
+  main .input .input-movie {width: 100%}
+  
+  main .input .input-city {
+    margin: 20px 0px;
+    width: 100%
+  }
+  
+  main .input .input-search {width: 100%}
 }
